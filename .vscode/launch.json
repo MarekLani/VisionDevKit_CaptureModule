@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "PhotoModule Remote Debug (Node.js)",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "address": "localhost",
+      "localRoot": "${workspaceRoot}/modules/PhotoModule",
+      "remoteRoot": "/app",
+      "protocol": "inspector"
+    },
+    {
+      "name": "PhotoModule Local Debug (Node.js)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/modules/PhotoModule/app.js",
+      "console": "integratedTerminal",
+      "env": {
+        "EdgeHubConnectionString": "${config:azure-iot-edge.EdgeHubConnectionString}",
+        "EdgeModuleCACertificateFile": "${config:azure-iot-edge.EdgeModuleCACertificateFile}",
+        "RTSP_IP":"192.168.31.247",
+        "RTSP_PORT":"8900",
+        "RTSP_PATH":"live",
+        "STORAGE_CONTAINER": "vision",
+        "AZURE_STORAGE_CONNECTION_STRING":""
+      }
+    }
+  ]
+}

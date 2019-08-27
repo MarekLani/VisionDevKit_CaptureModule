@@ -1,0 +1,21 @@
+FROM arm32v7/node:8-slim
+
+WORKDIR /app/
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ffmpeg \
+    && ls /var/lib/apt/lists \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY package*.json ./
+
+RUN npm install --production
+
+COPY app.js ./
+
+EXPOSE 9229
+
+USER node
+
+CMD ["node", "--inspect=0.0.0.0:9229", "app.js"]

@@ -1,0 +1,19 @@
+FROM node:8-alpine
+
+WORKDIR /app/
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ffmpeg \
+    && ls /var/lib/apt/lists \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY package*.json ./
+
+RUN npm install --production
+
+COPY app.js ./
+
+USER node
+
+CMD ["node", "app.js"]
