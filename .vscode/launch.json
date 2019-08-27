@@ -2,20 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "PhotoModule Remote Debug (Node.js)",
+      "name": "CaptureModule Remote Debug (Node.js)",
       "type": "node",
       "request": "attach",
       "port": 9229,
       "address": "localhost",
-      "localRoot": "${workspaceRoot}/modules/PhotoModule",
+      "localRoot": "${workspaceRoot}/modules/CaptureModule",
       "remoteRoot": "/app",
       "protocol": "inspector"
     },
     {
-      "name": "PhotoModule Local Debug (Node.js)",
+      "name": "CaptureModule Local Debug (Node.js)",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceRoot}/modules/PhotoModule/app.js",
+      "program": "${workspaceRoot}/modules/CaptureModule/app.js",
       "console": "integratedTerminal",
       "env": {
         "EdgeHubConnectionString": "${config:azure-iot-edge.EdgeHubConnectionString}",

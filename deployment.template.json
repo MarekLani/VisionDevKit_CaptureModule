@@ -51,13 +51,13 @@
           }
         },
         "modules": {
-          "PhotoModule": {
+          "CaptureModule": {
             "version": "1.0",
             "type": "docker",
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "${MODULES.PhotoModule}",
+              "image": "${MODULES.CaptureModule}",
               "createOptions": {}
             }
           },
@@ -78,8 +78,7 @@
       "properties.desired": {
         "schemaVersion": "1.0",
         "routes": {
-          "PhotoModuleToIoTHub": "FROM /messages/modules/PhotoModule/outputs/* INTO $upstream",
-          "sensorToPhotoModule": "FROM /messages/modules/SimulatedTemperatureSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/PhotoModule/inputs/input1\")"
+          "CaptureModuleToIoTHub": "FROM /messages/modules/CaptureModule/outputs/* INTO $upstream"
         },
         "storeAndForwardConfiguration": {
           "timeToLiveSecs": 7200
