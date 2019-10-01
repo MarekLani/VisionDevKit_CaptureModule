@@ -5,9 +5,9 @@ var Client = require('azure-iot-device').ModuleClient;
 var AzureStorage = require('azure-storage');
 const Process = require('child_process');
 
-// const rtspIp = "192.168.31.247";
-// const rtspPort = "8900";
-// const rtspPath = "live";
+//  const rtspIp = "192.168.31.248";
+//  const rtspPort = "8900";
+//  const rtspPath = "live";
 
 const storageContainer = process.env.STORAGE_CONTAINER; 
 
@@ -47,7 +47,7 @@ function TakeAndUploadCaptureFromStream()
   ffmpegProcess.on('exit', (code, signal) => {
     if(code == '1')
       console.log(`Process ffmpeg exited with code ${code} and signal ${signal}.`);
-    else
+   
       //upload image
       uploadImageToBlob(fileName);
   });

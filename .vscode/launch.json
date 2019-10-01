@@ -24,7 +24,7 @@
         "RTSP_PORT":"8900",
         "RTSP_PATH":"live",
         "STORAGE_CONTAINER": "vision",
-        "AZURE_STORAGE_CONNECTION_STRING":""
+        "AZURE_STORAGE_CONNECTION_STRING":"DefaultEndpointsProtocol=https;AccountName=marekiotdemostrg;AccountKey=vCaUAd9Ngz2E8fgw+bMqnee1HBRh6bAXP/oaL5eFYROmKx399G7vfjmci1LDDRerzyjH2MsCcLHlD7vY2+sK1A==;EndpointSuffix=core.windows.net"
       }
     }
   ]
